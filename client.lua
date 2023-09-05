@@ -41,7 +41,7 @@ RegisterCommand('taxi', function(source, args)
 end, false)
 
 
--- get coord function
+-- Get coord command
 RegisterCommand('getcoord', function(source, args)
     TriggerEvent('chat:addMessage', {
         args = {'x: ', Floor((GetEntityCoords(GetPlayerPed(-1), true).x)*100)/100,}
