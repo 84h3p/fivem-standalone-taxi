@@ -7,6 +7,7 @@ local distance = GetDistanceBetweenCoords(GetEntityCoords(GetPlayerPed(-1)), cus
 RegisterCommand('taxi', function(source, args)
     RemoveBlip(customerBlip)
     RemoveBlip(destinationBlip)
+        
     -- Creates customer ped
     RequestModel( GetHashKey( "s_m_m_bouncer_01" ) )
     while ( not HasModelLoaded( GetHashKey( "s_m_m_bouncer_01" ) ) ) do
@@ -24,7 +25,7 @@ RegisterCommand('taxi', function(source, args)
     end
 
     local taxiVehicle = GetVehiclePedIsIn(GetPlayerPed(-1), false)
-    Citizen.Wait(1000) -- Задержка 500 миллисекунд
+    Citizen.Wait(1000) 
     print(taxiVehicle, 'vehicle')
     TaskWarpPedIntoVehicle(customer, taxiVehicle, 0)
     RemoveBlip(customerBlip)
